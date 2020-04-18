@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>おみくじ</title>
+  <!-- css部分--><style>
+  body {
+  background: #efefef;
+}
+
+#btn {
+  width: 200px;
+  height: 200px;
+  background: #ef454a;
+  border-radius: 50%;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 200px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 42px;
+  cursor: pointer;
+  box-shadow: 0 10px 0 #d1483e;
+  user-select: none;
+}
+
+#btn:hover {
+  opacity: 0.9;
+}
+
+#btn:active {
+  box-shadow: 0 5px 0 #d1483e;
+  margin-top: 35px;
+}
+  </style>
+</head>
+<body>
+  <div id="btn">?</div>
+  <script>
+  'use strict';
+
+{
+  const btn = document.getElementById('btn');
+
+  btn.addEventListener('click', () => {
+    // const results = ['大吉', '中吉', '凶', '末吉'];
+    // const results = ['大吉', '大吉', '大吉', '大吉', '凶'];
+    // btn.textContent = results[Math.floor(Math.random() * results.length)];
+    const n = Math.random();
+    if (n < 0.05) {
+      btn.textContent = '大吉'; // 5%
+    } else if (n < 0.2) {
+      btn.textContent = '中吉'; // 15%
+    } else {
+      btn.textContent = '凶'; // 80%
+    }
+  });
+}
+  </script>
+</body>
+</html>
